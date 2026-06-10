@@ -135,7 +135,9 @@
         .card p { color:var(--muted); line-height:1.55; font-size:0.96rem; }
         .card .tag { display:inline-block; color:#ffd9c6; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.18em; margin-bottom:8px; }
         .platform-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:10px; margin-bottom:18px; }
-        .yandex-frame { width:100%; min-height:460px; border:1px solid rgba(255,255,255,0.12); border-radius:18px; background:rgba(255,255,255,0.03); box-shadow:var(--shadow); }
+        .yandex-frame { width:100%; min-height:520px; border:1px solid rgba(255,255,255,0.14); border-radius:22px; background:linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); box-shadow:0 20px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04); overflow:hidden; }
+        .music-shell { display:grid; gap:14px; }
+        .music-panel { display:grid; gap:10px; padding:16px; border-radius:22px; background:linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); border:1px solid rgba(255,255,255,0.12); box-shadow:var(--shadow); }
         .platform-link { display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 12px; border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); border:1px solid rgba(255,255,255,0.12); color:#fff; font-weight:600; font-size:0.92rem; box-shadow:0 10px 18px rgba(0,0,0,0.22); transition:transform 0.18s ease, background 0.18s ease, border-color 0.18s ease; }
         .platform-link:hover { transform:translateY(-2px); background:rgba(255,255,255,0.10); border-color: rgba(255,210,122,0.35); }
         .platform-icon { width:18px; height:18px; object-fit:contain; border-radius:4px; }
@@ -223,11 +225,13 @@
                 <a class="platform-link" href="https://music.apple.com/search?term=by_LedaN" target="_blank" rel="noopener noreferrer">Apple Music</a>
                 <a class="platform-link" href="https://soundcloud.com/search?q=by_LedaN" target="_blank" rel="noopener noreferrer">SoundCloud</a>
             </div>
-            <article class="card">
-                <span class="tag">Яндекс Музыка</span>
-                <h3>Слушать треки и смотреть обложки</h3>
-                <p>Официальный блок Яндекс Музыки для артиста by_LedaN.</p>
-                <div style="margin-top: 14px;">
+            <article class="card music-shell">
+                <div class="music-panel">
+                    <span class="tag">Яндекс Музыка</span>
+                    <h3>Слушать треки и смотреть обложки</h3>
+                    <p>Официальный блок Яндекс Музыки для артиста by_LedaN. Сделан в более плотном и премиальном формате.</p>
+                </div>
+                <div style="max-width: 980px; margin: 0 auto; width: 100%;">
                     <iframe class="yandex-frame" src="https://music.yandex.ru/iframe/#artist/23817820" title="Яндекс Музыка — by_LedaN" allow="autoplay; clipboard-write; encrypted-media; fullscreen" loading="lazy"></iframe>
                 </div>
             </article>
@@ -241,7 +245,7 @@
                 <article class="card gallery-card"><img src="../ФОТО ДЛЯ САЙТА/ChatGPT Image 25 мая 2026 г., 01_15_03.png" alt="Фото проекта by_LedaN 3" /></article>
                 <article class="card gallery-card"><img src="../ФОТО ДЛЯ САЙТА/result_ChatGPT Image 25 мая 2026 г., 00_48_27.png" alt="Фото проекта by_LedaN 4" /></article>
                 <article class="card gallery-card"><img src="../ФОТО ДЛЯ САЙТА/result_ChatGPT Image 25 мая 2026 г., 02_18_22.png" alt="Фото проекта by_LedaN 5" /></article>
-                <article class="card gallery-card"><img src="../Фото артиста.jpg" alt="Фото артиста by_LedaN" /></article>
+                <article class="card gallery-card"><img src="../ФОТО ДЛЯ САЙТА/result_ChatGPT Image 25 мая 2026 г., 02_18_22.png" alt="Фото проекта by_LedaN 6" /></article>
             </div>
         </section>
 
