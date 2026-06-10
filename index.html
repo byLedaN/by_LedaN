@@ -640,12 +640,12 @@
             <div class="section-head">
                 <div>
                     <h2>Дискография</h2>
-                    <p>Ниже — основной профиль BandLink с релизами и ссылками по артисту by_LedaN. Дополнительно оставлены другие площадки для поиска и прослушивания.</p>
+                    <p>Ниже — официальный виджет Яндекс Музыки с реальными обложками и треками артиста. Дополнительно оставлены ссылки на площадки по никнейму by_LedaN.</p>
                 </div>
             </div>
             <div class="platform-grid">
                 <a class="platform-link" href="https://vk.com/search?c%5Bq%5D=by_LedaN" target="_blank" rel="noopener noreferrer"><img class="platform-icon" src="ВК.PNG" alt="VK" />VK</a>
-                <a class="platform-link" href="https://bandlink.ru/artist/by_LedaN" target="_blank" rel="noopener noreferrer">BandLink</a>
+                <a class="platform-link" href="https://music.yandex.ru/artist/23817820" target="_blank" rel="noopener noreferrer">Яндекс Музыка</a>
                 <a class="platform-link" href="https://music.youtube.com/search?q=by_LedaN" target="_blank" rel="noopener noreferrer">YouTube Music</a>
                 <a class="platform-link" href="https://open.spotify.com/search/by_LedaN" target="_blank" rel="noopener noreferrer">Spotify</a>
                 <a class="platform-link" href="https://music.apple.com/search?term=by_LedaN" target="_blank" rel="noopener noreferrer">Apple Music</a>
@@ -653,13 +653,12 @@
             </div>
             <article class="card music-shell">
                 <div class="music-panel">
-                    <span class="tag">BandLink</span>
-                    <h3>Профиль артиста и релизы</h3>
-                    <p>Открывайте актуальные релизы, ссылки и обновления по артисту by_LedaN прямо в профиле BandLink.</p>
-                    <div class="cta-row">
-                        <a class="btn btn-primary" href="https://bandlink.ru/artist/by_LedaN" target="_blank" rel="noopener noreferrer">Открыть BandLink</a>
-                        <a class="btn btn-secondary" href="#news">Посмотреть релизы</a>
-                    </div>
+                    <span class="tag">Яндекс Музыка</span>
+                    <h3>Слушать треки и смотреть обложки</h3>
+                    <p>Официальный блок Яндекс Музыки для артиста by_LedaN. Сделан в более плотном и премиальном формате.</p>
+                </div>
+                <div style="max-width: 980px; margin: 0 auto; width: 100%;">
+                    <iframe class="yandex-frame" src="https://music.yandex.ru/iframe/#artist/23817820" title="Яндекс Музыка — by_LedaN" allow="autoplay; clipboard-write; encrypted-media; fullscreen" loading="lazy"></iframe>
                 </div>
             </article>
         </section>
@@ -721,7 +720,7 @@
                     <span class="tag">Визуал</span>
                     <h3>Образ и стиль</h3>
                     <img src="Фото артиста.jpg" alt="Фотография артиста by_LedaN" />
-                    <img src="ФОТО ДЛЯ САЙТА/ChatGPT Image 16 февр. 2026 г., 03_24_04.png" alt="Дополнительная фотография by_LedaN" style="margin-top: 12px;" />
+                    <img src="ChatGPT Image 16 февр. 2026 г., 03_24_04.png" alt="Дополнительная фотография by_LedaN" style="margin-top: 12px;" />
                 </article>
             </div>
         </section>
@@ -755,11 +754,12 @@
 
         const assetPrefix = window.location.pathname.includes('/docs/') ? '../' : '';
         const fallbackDataUrl = assetPrefix ? '../data/releases.json' : 'data/releases.json';
-        const bandlinkProfileUrl = 'https://bandlink.ru/artist/by_LedaN';
-        const bandlinkAlternatives = [
-          bandlinkProfileUrl,
-          'https://bandlink.ru/artist/by_LedaN/releases',
-          'https://bandlink.ru/search?q=by_LedaN'
+        const yandexArtistUrl = 'https://music.yandex.ru/artist/23817820';
+        const yandexAlternatives = [
+          yandexArtistUrl,
+          'https://music.yandex.ru/artist/23817820/tracks',
+          'https://music.yandex.ru/artist/23817820/albums',
+          'https://music.yandex.ru/search?text=by_LedaN'
         ];
 
         function normalizeImage(image, fallbackPath) {
@@ -846,8 +846,11 @@
           });
         }
 
-        function loadFromBandLink() {
-          var candidates = bandlinkAlternatives;
+        function loadFromYandexMusic() {
+          var candidates = yandexAlternatives.concat([
+            'https://music.yandex.ru/handlers/artist.jsx?artist=23817820',
+            'https://music.yandex.ru/artist/23817820?utm_source=site'
+          ]);
 
           return candidates.reduce(function (promise, url) {
             return promise.catch(function () {
@@ -872,7 +875,7 @@
             });
         }
 
-        loadFromBandLink()
+        loadFromYandexMusic()
           .then(function (items) {
             renderItems(items.slice(0, 6));
           })
@@ -884,7 +887,7 @@
             renderItems(items.slice(0, 6));
           })
           .catch(function () {
-            releasesContainer.innerHTML = '<p class="listen-note">Релизы обновляются автоматически через BandLink. Если источник временно недоступен, сайт покажет локальный список.</p>';
+            releasesContainer.innerHTML = '<p class="listen-note">Релизы обновляются автоматически с Яндекс Музыки. Если источник временно недоступен, сайт покажет локальный список.</p>';
           });
       })();
     </script>
