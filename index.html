@@ -241,6 +241,64 @@
             margin-bottom: 8px;
         }
 
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .platform-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: transform 0.18s ease, background 0.18s ease;
+        }
+
+        .platform-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.10); }
+        .platform-icon { width: 18px; height: 18px; object-fit: contain; border-radius: 4px; }
+
+        .track-card { overflow: hidden; }
+        .track-cover {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .track-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 8px;
+            color: #ffd9c6;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .track-audio audio {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .listen-note {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
         .release-list { display: grid; gap: 12px; }
         .release {
             display: flex;
@@ -379,39 +437,59 @@
             <div class="section-head">
                 <div>
                     <h2>Дискография</h2>
-                    <p>Список релизов и треков, которые уже вошли в текущий звук проекта.</p>
+                    <p>Слушайте треки прямо на сайте, а также открывайте релизы на основных музыкальных площадках по никнейму by_LedaN.</p>
                 </div>
             </div>
+            <div class="platform-grid">
+                <a class="platform-link" href="https://vk.com/search?c%5Bq%5D=by_LedaN" target="_blank" rel="noopener noreferrer"><img class="platform-icon" src="ВК.PNG" alt="VK" />VK</a>
+                <a class="platform-link" href="https://music.youtube.com/search?q=by_LedaN" target="_blank" rel="noopener noreferrer">YouTube Music</a>
+                <a class="platform-link" href="https://open.spotify.com/search/by_LedaN" target="_blank" rel="noopener noreferrer">Spotify</a>
+                <a class="platform-link" href="https://music.apple.com/search?term=by_LedaN" target="_blank" rel="noopener noreferrer">Apple Music</a>
+                <a class="platform-link" href="https://music.yandex.ru/search?text=by_LedaN" target="_blank" rel="noopener noreferrer">Яндекс Музыка</a>
+                <a class="platform-link" href="https://soundcloud.com/search?q=by_LedaN" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            </div>
             <div class="grid-3">
-                <article class="card">
-                    <span class="tag">2026</span>
-                    <h3>Ой да не вечер</h3>
+                <article class="card track-card">
+                    <img class="track-cover" src="Фото артиста.jpg" alt="Обложка трека Ой да не вечер" />
+                    <div class="track-meta"><span>2026</span><strong>Ой да не вечер</strong></div>
                     <p>Тёплый и эмоциональный трек с ярким хореем и уличной подачей.</p>
+                    <div class="track-audio"><audio controls preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio></div>
+                    <p class="listen-note">Встроенный проигрыватель для прослушивания прямо на странице.</p>
                 </article>
-                <article class="card">
-                    <span class="tag">Релиз</span>
-                    <h3>Бас дави</h3>
+                <article class="card track-card">
+                    <img class="track-cover" src="Фото артиста.jpg" alt="Обложка трека Бас дави" />
+                    <div class="track-meta"><span>Релиз</span><strong>Бас дави</strong></div>
                     <p>Плотный и энергичный трек с жёсткой ритмикой и уверенной подачей.</p>
+                    <div class="track-audio"><audio controls preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio></div>
+                    <p class="listen-note">Открывайте доп. площадки через ссылки выше.</p>
                 </article>
-                <article class="card">
-                    <span class="tag">Релиз</span>
-                    <h3>Примерная девочка</h3>
+                <article class="card track-card">
+                    <img class="track-cover" src="Фото артиста.jpg" alt="Обложка трека Примерная девочка" />
+                    <div class="track-meta"><span>Релиз</span><strong>Примерная девочка</strong></div>
                     <p>Лирика, образ и мелодия в стиле современного уличного рэпа.</p>
+                    <div class="track-audio"><audio controls preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"></audio></div>
+                    <p class="listen-note">Плеер работает в браузере и не требует установки.</p>
                 </article>
-                <article class="card">
-                    <span class="tag">Релиз</span>
-                    <h3>Забайкальский характер</h3>
+                <article class="card track-card">
+                    <img class="track-cover" src="Фото артиста.jpg" alt="Обложка трека Забайкальский характер" />
+                    <div class="track-meta"><span>Релиз</span><strong>Забайкальский характер</strong></div>
                     <p>Живой вайб и региональная энергия, которая раскрывает личность артиста.</p>
+                    <div class="track-audio"><audio controls preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"></audio></div>
+                    <p class="listen-note">Поддержка мобильных устройств и ПК.</p>
                 </article>
-                <article class="card">
-                    <span class="tag">Релиз</span>
-                    <h3>Что такое фонк?</h3>
+                <article class="card track-card">
+                    <img class="track-cover" src="Фото артиста.jpg" alt="Обложка трека Что такое фонк?" />
+                    <div class="track-meta"><span>Релиз</span><strong>Что такое фонк?</strong></div>
                     <p>Микс современной культуры, ритма и атмосферы в одном треке.</p>
+                    <div class="track-audio"><audio controls preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"></audio></div>
+                    <p class="listen-note">Треки доступны для быстрого прослушивания с этой страницы.</p>
                 </article>
-                <article class="card">
-                    <span class="tag">Релиз</span>
-                    <h3>На битах</h3>
+                <article class="card track-card">
+                    <img class="track-cover" src="Фото артиста.jpg" alt="Обложка трека На битах" />
+                    <div class="track-meta"><span>Релиз</span><strong>На битах</strong></div>
                     <p>Более плотный и техничный материал для слушателей, которые любят драйв.</p>
+                    <div class="track-audio"><audio controls preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"></audio></div>
+                    <p class="listen-note">Ссылки на площадки добавлены рядом с релизами.</p>
                 </article>
             </div>
         </section>
